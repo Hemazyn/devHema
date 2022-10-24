@@ -11,9 +11,9 @@ section#contact {
 
 /**SECTION ROOT-**/
 :root {
-    --primary-color: #0d1117;
+    --primary-color: #e7edf3;
+    --secondary-color: #0d1117;
     --text-hover: #317773;
-    --secondary-color: #e7edf3;
     --secondary-color2: #fff;
     --bg-color3: hsl(0 0% 0% / 0.50);
     --glass-effect: linear-gradient(to bottom,
@@ -43,8 +43,8 @@ a {
 
 /*ANCHOR  MODE-**/
 .theme-mode {
-    --primary-color: #e7edf3;
-    --secondary-color: #0d1117;
+    --primary-color: #0d1117;
+    --secondary-color: #e7edf3;
 }
 
 .navbar img {

@@ -3,15 +3,16 @@ var moon = document.getElementById("moon");
 moon.onclick = function () {
     document.body.classList.toggle("theme-mode");
     if (document.body.classList.contains("theme-mode")) {
-        moon.src = "./images/sun3.png";
-    } else {
         moon.src = "./images/moon.svg";
+    } else {
+        moon.src = "./images/sun3.png";
     }
 }
 
 /** NOTE  active nav-link section **/
 var sections = document.querySelectorAll("section");
 var navLink = document.querySelectorAll(".nav-link");
+var tabItem = document.querySelectorAll(".tab-item");
 window.onscroll = () => {
     let current = "";
     sections.forEach((section) => {
@@ -25,6 +26,13 @@ window.onscroll = () => {
         a.classList.remove("active");
         if (a.href.includes(current)) {
             a.classList.add("active");
+        }
+    });
+    /** NOTE tab-item **/
+    tabItem.forEach((li) => {
+        li.classList.remove("active");
+        if (li.href.includes(current)) {
+            li.classList.add("active");
         }
     });
 };
