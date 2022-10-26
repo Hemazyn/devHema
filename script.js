@@ -5,7 +5,7 @@ moon.onclick = function () {
     if (document.body.classList.contains("theme-mode")) {
         moon.src = "./images/moon.svg";
     } else {
-        moon.src = "./images/sun3.png";
+        moon.src = "./images/sun3.webp";
     }
 }
 
@@ -31,7 +31,8 @@ window.onscroll = () => {
     /** NOTE tab-item **/
     tabItem.forEach((li) => {
         li.classList.remove("active");
-        if (li.href.includes(current)) {
+        let current = "";
+        if (li.href.contains(current)) {
             li.classList.add("active");
         }
     });
@@ -44,7 +45,6 @@ function reveal() {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
         var elementVisible = 150;
-
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
         } else {
