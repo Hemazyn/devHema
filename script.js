@@ -10,33 +10,41 @@ moon.onclick = function () {
 }
 
 /** NOTE  active nav-link section **/
+//query selectors
 var sections = document.querySelectorAll("section");
 var navLink = document.querySelectorAll(".nav-link");
 var tabItem = document.querySelectorAll(".tab-item");
-window.onscroll = () => {
-    let current = "";
-    sections.forEach((section) => {
-        var sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute("id");
+//helper functions
+const actionSectionHandler = (currentSectionId) => {
+    navLink.forEach(link => {
+        if (link.dataset.section === currentSectionId) {
+            link.classList.add('active');
+            return;
         }
-    });
-    /** NOTE nav-link **/
-    navLink.forEach((a) => {
-        a.classList.remove("active");
-        if (a.href.includes(current)) {
-            a.classList.add("active");
+        link.classList.remove('active');
+    })
+    tabItem.forEach((link) => {
+        if (link.dataset.section === currentSectionId) {
+            link.classList.add('active');
+            return;
         }
+        link.classList.remove('active');
+    })
+}
+//intersection observer
+function sectionWatcherCallBack(section, sectionWatcher) {
+    section.forEach(section => {
+        if (!section.isIntersecting) { return; };
+        actionSectionHandler(section.target.id);
     });
-    /** NOTE tab-item **/
-    tabItem.forEach((li) => {
-        li.classList.remove("active");
-        let current = "";
-        if (li.href.contains(current)) {
-            li.classList.add("active");
-        }
-    });
-};
+}
+const sectionWatcherOptions = {
+    threshold: .6
+}
+const sectionWatcher = new IntersectionObserver(sectionWatcherCallBack, sectionWatcherOptions)
+sections.forEach(section => {
+    sectionWatcher.observe(section);
+})
 
 /** NOTE  ANIMATE ON SCROLL **/
 function reveal() {
@@ -54,9 +62,11 @@ function reveal() {
 }
 window.addEventListener("scroll", reveal);
 
-/** NOTE  active nav-link section **/
+
+
 // var sections = document.querySelectorAll("section");
 // var navLink = document.querySelectorAll(".nav-link");
+// var tabItem = document.querySelectorAll(".tab-item");
 // window.onscroll = () => {
 //     let current = "";
 //     sections.forEach((section) => {
@@ -70,6 +80,14 @@ window.addEventListener("scroll", reveal);
 //         a.classList.remove("active");
 //         if (a.href.includes(current)) {
 //             a.classList.add("active");
+//         }
+//     });
+//     /** NOTE tab-item **/
+//     tabItem.forEach((li) => {
+//         li.classList.remove("active");
+//         let current = "";
+//         if (li.href.contains(current)) {
+//             li.classList.add("active");
 //         }
 //     });
 // };
