@@ -579,10 +579,6 @@ form div:nth-child(4) {
     transition-property: all;
 }
 
-form div:nth-child(4):hover {
-    transform: rotateY(180deg) !important;
-}
-
 /** ANCHOR TAB VIEW **/
 @media (max-width: 768px) {
     .navbar-nav {
@@ -941,10 +937,6 @@ form div:nth-child(4):hover {
         transition-duration: 1s;
         transition-property: all;
     }
-
-    form div:nth-child(4):hover {
-        transform: rotateY(180deg) !important;
-    }
 }
 
 /** ANCHOR PHONE VIEW **/
@@ -1300,9 +1292,5 @@ form div:nth-child(4):hover {
         animation-fill-mode: forwards;
         transition-duration: 1s;
         transition-property: all;
-    }
-
-    form div:nth-child(4):hover {
-        transform: none !important;
     }
 }
