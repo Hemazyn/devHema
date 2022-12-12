@@ -94,9 +94,7 @@ a {
     color: var(--primary-color);
 }
 
-.nav-item a.active,
-.nav-item a:hover,
-.nav-item a:focus {
+.navbar-nav .nav-link.active {
     color: #317773;
     font-weight: bold;
 }

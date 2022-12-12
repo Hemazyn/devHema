@@ -1,13 +1,13 @@
 {
 	"liveServer.settings.port": 5502,
-	 "commentAnchors.parseDelay": 200,
-	 "commentAnchors.scrollPosition": "top",
+	"commentAnchors.parseDelay": 200,
+	"commentAnchors.scrollPosition": "top",
 	"commentAnchors.workspace.enabled": true,
 	"commentAnchors.showCursor": false,
 	"commentAnchors.tagHighlights.enabled": true,
 	"commentAnchors.workspace.lazyLoad": true,
-	 "commentAnchors.tags.provideAutoCompletion": true,
-	 "commentAnchors.tags.displayInSidebar": true,
+	"commentAnchors.tags.provideAutoCompletion": true,
+	"commentAnchors.tags.displayInSidebar": true,
 	"commentAnchors.tags.anchors": {
 		"ANCHOR": {
 			"iconColor": "default",
@@ -52,5 +52,12 @@
 			"behavior": "link"
 		}
 	},
-	"commentAnchors.workspace.maxFiles": 50
+	"commentAnchors.workspace.maxFiles": 50,
+	"keyboard.touchbar.enabled": true,
+	"ipynb.experimental.pasteImages.enabled": false,
+	"window.autoDetectColorScheme": false,
+	"window.commandCenter": false,
+	"editor.suggest.showStatusBar": false,
+	"editor.suggest.localityBonus": false,
+	"editor.minimap.autohide": true
 }
